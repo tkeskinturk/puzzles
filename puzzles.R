@@ -4,7 +4,7 @@
 
 # packages and data
 
-pacman::p_load(tidyverse, hrbrthemes, wesanderson)
+pacman::p_load(tidyverse, hrbrthemes)
 d <- read.csv('./data/asr_puzzlecounts.csv') 
 
 # create article percentages
@@ -13,6 +13,7 @@ d <- d |>
   mutate(per = puzzle/asr)
 
 # plot the trajectory
+
 png("puzzles.png", w = 8, h = 6, res = 500, units = "in")
 d |> 
   ggplot(aes(x = year, y = per)) +
